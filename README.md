@@ -65,7 +65,7 @@ Displays an animated welcome message and renders the grid of product reviews.
 
 2. Navigate to the project directory:
    ```bash
-   cd marketing-dashboard
+   cd data-marketing
 
 3. Install dependencies:
    ```bash
