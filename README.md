@@ -61,7 +61,7 @@ Displays an animated welcome message and renders the grid of product reviews.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/marketing-dashboard.git
+   git clone https://github.com/tjsyte/data-marketing.git
 
 2. Navigate to the project directory:
    ```bash
