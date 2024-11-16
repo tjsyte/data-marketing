@@ -1,6 +1,3 @@
-import React, { useEffect, useRef } from 'react';
-import { Chart as ChartJS } from 'chart.js';
-
 const MyChart = ({ data, options }) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
@@ -9,19 +6,24 @@ const MyChart = ({ data, options }) => {
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
-    
+
     chartInstanceRef.current = new ChartJS(chartRef.current, {
-      type: 'line', 
+      type: 'line',
       data,
-      options,
+      options: {
+        ...options,
+        responsive: true,
+        maintainAspectRatio: false,
+      },
     });
 
     return () => {
-      chartInstanceRef.current.destroy(); /
+      chartInstanceRef.current.destroy();
     };
-  }, [data, options]); 
+  }, [data, options]);
 
-  return <canvas ref={chartRef} />;
+  return <div className="w-full h-64 sm:h-96"><canvas ref={chartRef} /></div>;
 };
 
 export default MyChart;
+    
