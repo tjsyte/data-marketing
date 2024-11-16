@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -9,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Pie, Bar, Line } from 'react-chartjs-2';
+import { Pie, Bar, Line } from 'react-chartjs-2'; 
 
 ChartJS.register(
   ArcElement,
@@ -51,18 +52,18 @@ const Charts = ({ data }) => {
   };
 
   return (
-    <div id="charts" className="p-4 grid grid-cols-3 gap-4">
-      <div className="col-span-2">
+    <div id="charts" className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="sm:col-span-2">
         <h2 className="text-xl mb-4">Bar Chart</h2>
         <Bar data={chartData} />
       </div>
 
-      <div className="col-span-1">
+      <div className="sm:col-span-1">
         <h2 className="text-xl mb-4">Pie Chart</h2>
         <Pie data={chartData} />
       </div>
 
-      <div className="col-span-2">
+      <div className="sm:col-span-2">
         <h2 className="text-xl mb-4">Line Chart</h2>
         <Line data={chartData} />
       </div>
